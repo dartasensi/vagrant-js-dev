@@ -29,7 +29,7 @@ Vagrant.configure("2") do |config|
     #  main.vm.synced_folder _sharedFolder_vboxsf_hostPath, _sharedFolder_vboxsf_guestPath, create: true
     #end
 
-    main.vm.network "forwarded_port", host: 8080, guest: 8080
+    main.vm.network "forwarded_port", host: 8080, guest: 8080, auto_correct: true
 
     main.vm.provider :virtualbox do |vb|
       #vb.name = "vagrant-js-dev"

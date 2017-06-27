@@ -41,6 +41,9 @@ Vagrant.configure("2") do |config|
 
       ## Display the VirtualBox GUI when booting the machine
       #vb.gui = true
+
+      # try to use VirtualBox linked clone
+      vb.linked_clone = true
     end
 
     # provisioning

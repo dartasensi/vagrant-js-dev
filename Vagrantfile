@@ -42,5 +42,8 @@ Vagrant.configure("2") do |config|
       ## Display the VirtualBox GUI when booting the machine
       #vb.gui = true
     end
+
+    # provisioning
+    main.vm.provision :shell, path: ".provision/bootstrap.sh"
   end
 end

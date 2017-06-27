@@ -32,7 +32,7 @@ Vagrant.configure("2") do |config|
     main.vm.network "forwarded_port", host: 8080, guest: 8080
 
     main.vm.provider :virtualbox do |vb|
-      vb.name = "vagrant-js-dev"
+      #vb.name = "vagrant-js-dev"
       vb.cpus = 4
       vb.memory = "4096"
 

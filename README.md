@@ -1,1 +1,1 @@
-# vagrant-js-tutorial
+# vagrant-js-dev

@@ -42,6 +42,11 @@ sudo apt-get update -qq && sudo apt-get install -y yarn
 echo "> installing sqlite3 (libsqlite3-dev)"
 sudo apt-get update -qq && sudo apt-get install -y libsqlite3-dev sqlite3
 
+#
+# mongodb
+echo "> installing mongodb"
+sudo apt-get update -qq && sudo apt-get install -y mongodb
+
 ##
 ## nginx
 #sudo apt-get update -qq && sudo apt-get install -y nginx

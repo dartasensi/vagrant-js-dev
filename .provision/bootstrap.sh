@@ -21,7 +21,6 @@ sudo apt-get install -y build-essential
 # optional: node-pre-gyp
 sudo npm install node-pre-gyp -g
 
-
 #
 # yarn
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
@@ -44,8 +43,9 @@ sudo apt-get update -qq && sudo apt-get install -y libsqlite3-dev sqlite3
 #sudo service nginx restart
 
 ##
-## install Python and verify Python
+## python3
 # sudo apt-get update -qq && sudo apt-get install -y python3 python3-pip
+## verify version
 # python3 --version
 
 ##

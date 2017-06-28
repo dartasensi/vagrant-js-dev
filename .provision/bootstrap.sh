@@ -7,13 +7,20 @@
 #
 # utilities
 sudo apt-get update -qq && sudo apt-get install -y zip unzip git
+#
+# dev
+sudo apt-get update -qq && sudo apt-get install -y make gcc g++
 
 #
 # node.js 6.x
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt-get update -qq && sudo apt-get install -y nodejs
-# optional
+# optional: build-essential
 sudo apt-get install -y build-essential
+#
+# optional: node-pre-gyp
+sudo npm install node-pre-gyp -g
+
 
 #
 # yarn
@@ -23,7 +30,7 @@ sudo apt-get update -qq && sudo apt-get install -y yarn
 
 #
 # sqlite3
-sudo apt-get update -qq && sudo apt-get install -y sqlite3
+sudo apt-get update -qq && sudo apt-get install -y libsqlite3-dev sqlite3
 
 ##
 ## nginx

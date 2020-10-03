@@ -5,22 +5,23 @@ Vagrant.configure("2") do |config|
   # #####
   # configuration variables
   # #####
+  _vm_box = "ubuntu/trusty64"
+  _vm_name = "vagrant-js-dev"
+  _vm_hostname = "main.example.com"
 
   # #####
   # vagrant vm definition
   # #####
-  config.vm.box = "ubuntu/trusty64"
+  config.vm.box = _vm_box
 
   # vbguest: Should the plugin take the Guest Additions from remote or local installation? (default: remote)
   #config.vbguest.no_remote = true
 
-  #
   config.vm.define "main", primary: true do |main|
-    main.vm.hostname = "main.example.com"
+    main.vm.hostname = _vm_hostname
 
     # use the default sync folder /vagrant
     main.vm.synced_folder ".", "/vagrant", disabled: false
-
 
     ## check and exec only if plugin are not disabled
     #if Vagrant.has_plugin?("vagrant-vbguest")
@@ -32,7 +33,7 @@ Vagrant.configure("2") do |config|
     main.vm.network "forwarded_port", host: 8080, guest: 8080, auto_correct: true
 
     main.vm.provider :virtualbox do |vb|
-      #vb.name = "vagrant-js-dev"
+      #vb.name = _vm_name
       vb.cpus = 4
       vb.memory = "4096"
 
@@ -46,7 +47,7 @@ Vagrant.configure("2") do |config|
       vb.linked_clone = true
     end
 
-    # provisioning
+    # basic provision with shell script
     main.vm.provision :shell, path: ".provision/bootstrap.sh"
   end
 end
